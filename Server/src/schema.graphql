@@ -2,6 +2,10 @@ type Query {
   info: String!
   feed (filter : String, skip : Int, first : Int, orderBy : LinkOrderbyInput): [Link!]!
   link(id : String!) : Link
+  members: [Member]
+  member (id : ID!) : Member
+  posts: [Post!]!
+  post(id : ID!) : Post
 
 }
 type Mutation {
@@ -41,6 +45,20 @@ type Vote {
     user : User!
 }
 
+type Member {
+    id : ID!
+    name: String!
+    posts: [Post!]!
+}
+
+type Post {
+    id : ID!
+    title: String!
+    content: String!
+    published: Boolean!
+    author: Member!
+
+}
 enum LinkOrderbyInput {
     description_ASC
     description_DESC

@@ -17,7 +17,20 @@ async function feed(root, args, context, info) {
     })
     return results
 }
+async function users(root, args, context, info) {
 
+    const results = await context.prisma.users();
+    return results
+}
+
+async function members(root, args, context, info) {
+    const results = await fetch("http://localhost:3000/members");
+    console.log("members - Members");
+    const returnValue = results.json();
+    return returnValue;
+}
 module.exports = {
-    feed
+    feed,
+    users,
+    members
 }
