@@ -6,6 +6,7 @@ type Query {
   member (id : ID!) : Member
   posts: [Post!]!
   post(id : ID!) : Post
+  users:[User!]!
 
 }
 type Mutation {
