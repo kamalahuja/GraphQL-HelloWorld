@@ -4,3 +4,4 @@
 4. Initially you have to write datamodel.prisma file. And also prisma.yml.
 5. then type prisma deploy.
 6.Also you have to generate javascript clitn by typing prisma generate.
+7. We can see database at - https://app.prisma.io/ after authentication
